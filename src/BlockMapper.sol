@@ -15,6 +15,6 @@ contract BlockMapper {
 
     function mapBlockNumberL1ToL2(uint256 l1BlockNumber) public returns (uint256 l2BlockNumber) {
         uint256 timestamp = satellite.headerField(L1_CHAIN_ID, l1BlockNumber, satellite.BlockHeaderField.TIMESTAMP);
-        l2BlockNumber = satellite.timestampToBlockNumber(L2_CHAIN_ID, timestamp);
+        l2BlockNumber = satellite.timestamp(L2_CHAIN_ID, timestamp);
     }
 }
